@@ -1,5 +1,5 @@
 {
-  "name": "whatsapp-chat-parser",
+  "name": "whatsapp-chat-parser-alt",
   "version": "1.2.2",
   "description": "A package to parse WhatsApp chats",
   "main": "src/index.js",
@@ -11,9 +11,6 @@
     "format": "pretty-quick",
     "format:staged": "pretty-quick --staged"
   },
-  "engines": {
-    "node": ">=8.0.0"
-  },
   "keywords": [
     "whatsapp",
     "chat",
@@ -22,17 +19,17 @@
     "log",
     "parser"
   ],
-  "homepage": "https://github.com/Pustur/whatsapp-chat-parser",
+  "homepage": "https://github.com/gariasf/whatsapp-chat-parser-alt",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Pustur/whatsapp-chat-parser"
+    "url": "https://github.com/gariasf/whatsapp-chat-parser-alt"
   },
   "bugs": {
-    "url": "https://github.com/Pustur/whatsapp-chat-parser/issues"
+    "url": "https://github.com/gariasf/whatsapp-chat-parser-alt/issues"
   },
   "author": {
-    "name": "Loris Bettazza",
-    "email": "loris.bettazza@gmail.com"
+    "name": "Guillem Arias",
+    "email": "hello@gariasf.com"
   },
   "license": "MIT",
   "devDependencies": {
@@ -41,14 +38,8 @@
     "eslint-config-prettier": "3.3.0",
     "eslint-plugin-import": "2.14.0",
     "eslint-plugin-prettier": "3.0.0",
-    "husky": "1.1.4",
     "jest": "23.6.0",
     "prettier": "1.15.2",
     "pretty-quick": "1.8.0"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run format:staged && npm run lint && npm t"
-    }
   }
 }
