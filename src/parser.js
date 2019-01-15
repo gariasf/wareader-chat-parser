@@ -100,7 +100,7 @@ function parseMessages(messages, options = { daysFirst: undefined }) {
         ampm ? convertTime12to24(time, normalizeAMPM(ampm)) : time,
       ).split(/[:.]/);
 
-      if (!authorList.includes(author)) {
+      if (!authorList.includes(author) && author !== 'System') {
         authorList.push(author);
       }
 
