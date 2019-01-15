@@ -46,31 +46,31 @@ describe('parser.js', () => {
 
       describe('the date', () => {
         it('should be an instance of the Date object', () => {
-          expect(parsed[0].date).toBeInstanceOf(Date);
+          expect(parsed.messages[0].date).toBeInstanceOf(Date);
         });
 
         it('should contain the correct date', () => {
-          expect(parsed[0].date.getFullYear()).toBe(2018);
-          expect(parsed[0].date.getMonth()).toBe(5);
-          expect(parsed[0].date.getDate()).toBe(23);
+          expect(parsed.messages[0].date.getFullYear()).toBe(2018);
+          expect(parsed.messages[0].date.getMonth()).toBe(5);
+          expect(parsed.messages[0].date.getDate()).toBe(23);
         });
 
         it('should contain the correct time', () => {
-          expect(parsed[0].date.getHours()).toBe(1);
-          expect(parsed[0].date.getMinutes()).toBe(55);
-          expect(parsed[0].date.getSeconds()).toBe(0);
+          expect(parsed.messages[0].date.getHours()).toBe(1);
+          expect(parsed.messages[0].date.getMinutes()).toBe(55);
+          expect(parsed.messages[0].date.getSeconds()).toBe(0);
         });
       });
 
       describe('the author', () => {
         it('should contain the correct author', () => {
-          expect(parsed[0].author).toBe('Luke');
+          expect(parsed.messages[0].author).toBe('Luke');
         });
       });
 
       describe('the message', () => {
         it('should contain the correct message', () => {
-          expect(parsed[0].message).toBe('Hey!');
+          expect(parsed.messages[0].message).toBe('Hey!');
         });
       });
     });
@@ -83,31 +83,31 @@ describe('parser.js', () => {
 
       describe('the date', () => {
         it('should be an instance of the Date object', () => {
-          expect(parsed[0].date).toBeInstanceOf(Date);
+          expect(parsed.messages[0].date).toBeInstanceOf(Date);
         });
 
         it('should contain the correct date', () => {
-          expect(parsed[0].date.getFullYear()).toBe(2017);
-          expect(parsed[0].date.getMonth()).toBe(2);
-          expect(parsed[0].date.getDate()).toBe(6);
+          expect(parsed.messages[0].date.getFullYear()).toBe(2017);
+          expect(parsed.messages[0].date.getMonth()).toBe(2);
+          expect(parsed.messages[0].date.getDate()).toBe(6);
         });
 
         it('should contain the correct time', () => {
-          expect(parsed[0].date.getHours()).toBe(0);
-          expect(parsed[0].date.getMinutes()).toBe(45);
-          expect(parsed[0].date.getSeconds()).toBe(0);
+          expect(parsed.messages[0].date.getHours()).toBe(0);
+          expect(parsed.messages[0].date.getMinutes()).toBe(45);
+          expect(parsed.messages[0].date.getSeconds()).toBe(0);
         });
       });
 
       describe('the author', () => {
         it('should contain the correct author', () => {
-          expect(parsed[0].author).toBe('System');
+          expect(parsed.messages[0].author).toBe('System');
         });
       });
 
       describe('the message', () => {
         it('should contain the correct message', () => {
-          expect(parsed[0].message).toBe('You created group "Test"');
+          expect(parsed.messages[0].message).toBe('You created group "Test"');
         });
       });
     });
@@ -143,10 +143,10 @@ describe('parser.js', () => {
            * Checking for the year should be enough to know there were no errors
            * in parsing a specific format
            */
-          expect(parsed1[0].date.getFullYear()).toBe(2018);
-          expect(parsed2[0].date.getFullYear()).toBe(2018);
-          expect(parsed3[0].date.getFullYear()).toBe(2018);
-          expect(parsed4[0].date.getFullYear()).toBe(2018);
+          expect(parsed1.messages[0].date.getFullYear()).toBe(2018);
+          expect(parsed2.messages[0].date.getFullYear()).toBe(2018);
+          expect(parsed3.messages[0].date.getFullYear()).toBe(2018);
+          expect(parsed4.messages[0].date.getFullYear()).toBe(2018);
         });
       });
     });
@@ -158,10 +158,10 @@ describe('parser.js', () => {
         const parsedMonthFirst = parseMessages(messages, { daysFirst: false });
 
         it('should allow the user to define if days come first or not', () => {
-          expect(parsedDayFirst[0].date.getDate()).toBe(3);
-          expect(parsedDayFirst[0].date.getMonth()).toBe(5);
-          expect(parsedMonthFirst[0].date.getDate()).toBe(6);
-          expect(parsedMonthFirst[0].date.getMonth()).toBe(2);
+          expect(parsedDayFirst.messages[0].date.getDate()).toBe(3);
+          expect(parsedDayFirst.messages[0].date.getMonth()).toBe(5);
+          expect(parsedMonthFirst.messages[0].date.getDate()).toBe(6);
+          expect(parsedMonthFirst.messages[0].date.getMonth()).toBe(2);
         });
       });
     });

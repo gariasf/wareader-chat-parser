@@ -52,6 +52,8 @@ function makeArrayOfMessages(lines) {
  */
 function parseMessages(messages, options = { daysFirst: undefined }) {
   let { daysFirst } = options;
+  const authorList = [];
+  const finalObj = {};
 
   // Parse messages with regex
   const parsed = messages.map(obj => {
@@ -80,29 +82,43 @@ function parseMessages(messages, options = { daysFirst: undefined }) {
   }
 
   // Convert date/time in date object, return final object
-  return parsed.map(({ date, time, ampm, author, message }) => {
-    let day;
-    let month;
-    let year;
+  const mappedParsedMessages = parsed.map(
+    ({ date, time, ampm, author, message }) => {
+      let day;
+      let month;
+      let year;
 
-    if (daysFirst === false) {
-      [month, day, year] = date.split(/[-/.]/);
-    } else {
-      [day, month, year] = date.split(/[-/.]/);
-    }
+      if (daysFirst === false) {
+        [month, day, year] = date.split(/[-/.]/);
+      } else {
+        [day, month, year] = date.split(/[-/.]/);
+      }
 
-    [year, month, day] = normalizeDate(year, month, day);
+      [year, month, day] = normalizeDate(year, month, day);
 
-    const [hours, minutes, seconds] = normalizeTime(
-      ampm ? convertTime12to24(time, normalizeAMPM(ampm)) : time,
-    ).split(/[:.]/);
+      const [hours, minutes, seconds] = normalizeTime(
+        ampm ? convertTime12to24(time, normalizeAMPM(ampm)) : time,
+      ).split(/[:.]/);
 
-    return {
-      date: new Date(year, month - 1, day, hours, minutes, seconds),
-      author,
-      message,
-    };
-  });
+      if (!authorList.includes(author)) {
+        authorList.push(author);
+      }
+
+      return {
+        date: new Date(year, month - 1, day, hours, minutes, seconds),
+        author,
+        message,
+      };
+    },
+  );
+
+  if (mappedParsedMessages.length > 0) {
+    finalObj.messages = mappedParsedMessages;
+    finalObj.authorList = authorList;
+    finalObj.isGroup = authorList.length > 2;
+  }
+
+  return finalObj;
 }
 
 module.exports = {
