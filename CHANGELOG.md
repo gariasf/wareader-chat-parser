@@ -1,5 +1,17 @@
 # Change Log
 
+## [3.2.2] - 2018-12-02
+
+## Changed
+
+- Change return value to an object containing authors list and chat type
+
+## [2.2.2] - 2018-12-02
+
+## Removed
+
+- Remove direct file parsing method
+
 ## [1.2.2] - 2018-11-13
 
 ### Changed
