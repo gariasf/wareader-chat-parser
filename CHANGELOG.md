@@ -2,6 +2,12 @@
 
 ## [3.2.2] - 2018-12-02
 
+## Fixed
+
+- Fix "System" being added as an author
+
+## [3.2.2] - 2018-12-02
+
 ## Changed
 
 - Change return value to an object containing authors list and chat type
