@@ -1,6 +1,12 @@
 # Change Log
 
-## [3.2.2] - 2018-12-02
+## [3.3.3] - 2018-12-02
+
+## Added
+
+- Add formated date and time info on each message
+
+## [3.2.3] - 2018-12-02
 
 ## Fixed
 
