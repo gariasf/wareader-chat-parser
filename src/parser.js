@@ -104,8 +104,15 @@ function parseMessages(messages, options = { daysFirst: undefined }) {
         authorList.push(author);
       }
 
+      const dateObj = new Date(year, month - 1, day, hours, minutes, seconds);
+
       return {
-        date: new Date(year, month - 1, day, hours, minutes, seconds),
+        date: dateObj,
+        dateString: dateObj.toLocaleDateString('en-GB'),
+        dateDay: dateObj.getDay(),
+        time: dateObj
+          .toLocaleTimeString('en-GB', { hc: 'h24' })
+          .replace(/(:\d{2}| [AP]M)$/, ''),
         author,
         message,
       };
