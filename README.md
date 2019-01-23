@@ -5,7 +5,11 @@
 ## Install
 
 ```
-$ npm install whatsapp-chat-parser
+$ npm install whatsapp-chat-parser-alt
+```
+or
+```
+$ yarn add whatsapp-chat-parser-alt
 ```
 
 ## Usage
@@ -15,29 +19,42 @@ const whatsapp = require('whatsapp-chat-parser');
 
 whatsapp
   .parseString([raw whatsapp conversation])
-  .then(messages => {
-    // Do whatever you want with messages
+  .then(result => {
+    // Do whatever you want with result
   })
   .catch(err => {
     // Something went wrong
   });
 ```
 
-The `messages` variable is an array of objects like this:
+The `result` variable is an object like this:
 
 ```javascript
-[
-  {
-    date: '2018-06-02T22:45:00.000Z', // Date object
-    author: 'Luke',
-    message: 'Hey how are you?',
-  },
-  {
-    date: '2018-06-02T23:48:00.000Z', // Date object
-    author: 'Joe',
-    message: 'All good, thanks',
-  },
-];
+{
+  messages: [
+    {
+      date: '2018-06-02T22:45:00.000Z', // Date object
+      author: 'Luke',
+      message: 'Hey how are you?',
+      dateString: '02-06-2018', // Computed with toLocaleDateString() using 'en-BG'
+      dateDay: 6,
+      time: '22:45' // Computed with toLocaleDateString() using 'en-BG' 
+    },
+    {
+      date: '2018-06-02T23:48:00.000Z', // Date object
+      author: 'Joe',
+      message: 'All good, thanks',
+      dateString: '02-06-2018', // Computed with toLocaleDateString() using 'en-BG'
+      dateDay: 6,
+      time: '23:48' // Computed with toLocaleDateString() using 'en-BG' 
+    },
+  ],
+  authorList: [ // 'System' user is not added to this array
+    'Luke',
+    'Joe'
+  ],
+  isGroup: false
+};
 ```
 
 In the case of a system message, the author will be `System`
@@ -48,6 +65,9 @@ In the case of a system message, the author will be `System`
     date: '2018-06-02T22:45:00.000Z', // Date object
     author: 'System',
     message: 'You created group "Party 🎉"',
+    dateString: '02-06-2018', // Computed with toLocaleDateString() using 'en-BG'
+    dateDay: 6,
+    time: '22:45' // Computed with toLocaleDateString() using 'en-BG' 
   },
 ];
 ```
