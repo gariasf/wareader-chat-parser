@@ -1,4 +1,9 @@
 # Change Log
+## [3.4.3] - 2019-01-28
+
+## Added
+
+- Add relative author information to each message
 
 ## [3.3.3] - 2018-12-02
 

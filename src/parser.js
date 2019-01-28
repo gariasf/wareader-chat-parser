@@ -83,10 +83,12 @@ function parseMessages(messages, options = { daysFirst: undefined }) {
 
   // Convert date/time in date object, return final object
   const mappedParsedMessages = parsed.map(
-    ({ date, time, ampm, author, message }) => {
+    ({ date, time, ampm, author, message }, index) => {
       let day;
       let month;
       let year;
+      let isPreviousAuthor = false;
+      let isNextAuthor = false;
 
       if (daysFirst === false) {
         [month, day, year] = date.split(/[-/.]/);
@@ -104,6 +106,18 @@ function parseMessages(messages, options = { daysFirst: undefined }) {
         authorList.push(author);
       }
 
+      if (parsed[index + 1]) {
+        const previousAuthor = parsed[index + 1].author;
+
+        isNextAuthor = author.toLowerCase() === previousAuthor.toLowerCase();
+      }
+
+      if (parsed[index - 1]) {
+        const nextAuthor = parsed[index - 1].author;
+
+        isPreviousAuthor = author.toLowerCase() === nextAuthor.toLowerCase();
+      }
+
       const dateObj = new Date(year, month - 1, day, hours, minutes, seconds);
 
       return {
@@ -114,6 +128,8 @@ function parseMessages(messages, options = { daysFirst: undefined }) {
           .toLocaleTimeString('en-GB', { hc: 'h24' })
           .replace(/(:\d{2}| [AP]M)$/, ''),
         author,
+        isPreviousAuthor,
+        isNextAuthor,
         message,
       };
     },

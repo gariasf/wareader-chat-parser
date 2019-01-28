@@ -38,7 +38,9 @@ The `result` variable is an object like this:
       message: 'Hey how are you?',
       dateString: '02-06-2018', // Computed with toLocaleDateString() using 'en-BG'
       dateDay: 6,
-      time: '22:45' // Computed with toLocaleDateString() using 'en-BG' 
+      time: '22:45', // Computed with toLocaleDateString() using 'en-BG'
+      isPreviousAuthor: false, // Previous author is the same as the current one,
+      isNextAuthor: false // Next author is the same as the current one
     },
     {
       date: '2018-06-02T23:48:00.000Z', // Date object
@@ -46,7 +48,9 @@ The `result` variable is an object like this:
       message: 'All good, thanks',
       dateString: '02-06-2018', // Computed with toLocaleDateString() using 'en-BG'
       dateDay: 6,
-      time: '23:48' // Computed with toLocaleDateString() using 'en-BG' 
+      time: '23:48', // Computed with toLocaleDateString() using 'en-BG'
+      isPreviousAuthor: false, // Previous author is the same as the current one
+      isNextAuthor: false // Next author is the same as the current one
     },
   ],
   authorList: [ // 'System' user is not added to this array
@@ -67,7 +71,9 @@ In the case of a system message, the author will be `System`
     message: 'You created group "Party 🎉"',
     dateString: '02-06-2018', // Computed with toLocaleDateString() using 'en-BG'
     dateDay: 6,
-    time: '22:45' // Computed with toLocaleDateString() using 'en-BG' 
+    time: '22:45', // Computed with toLocaleDateString() using 'en-BG'
+    isPreviousAuthor: false, // Previous author is the same as the current one
+    isNextAuthor: false // Next author is the same as the current one
   },
 ];
 ```

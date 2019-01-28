@@ -1,6 +1,6 @@
 {
   "name": "whatsapp-chat-parser-alt",
-  "version": "3.3.3",
+  "version": "3.4.3",
   "description": "A package to parse WhatsApp chats",
   "main": "src/index.js",
   "scripts": {
