@@ -5,6 +5,9 @@ const {
   normalizeTime,
 } = require('./time.js');
 
+const htmlify = require('./htmlify');
+const computeUserInitials = require('./compute-user-initials');
+
 const regexParser = /\[?(\d{1,2}[-/.]\d{1,2}[-/.]\d{2,4}),? (\d{1,2}[.:]\d{1,2}(?:[.:]\d{1,2})?)(?: ([ap]\.?m\.?))?\]?(?: -|:)? (.+?): ((?:.|\s)*)/i;
 const regexParserSystem = /\[?(\d{1,2}[-/.]\d{1,2}[-/.]\d{2,4}),? (\d{1,2}[.:]\d{1,2}(?:[.:]\d{1,2})?)(?: ([ap]\.?m\.?))?\]?(?: -|:)? ((?:.|\s)+)/i;
 const regexStartsWithDateTime = /\[?(\d{1,2}[-/.]\d{1,2}[-/.]\d{2,4}),? (\d{1,2}[.:]\d{1,2}(?:[.:]\d{1,2})?)(?: ([ap]\.?m\.?))?\]?/i;
@@ -103,7 +106,11 @@ function parseMessages(messages, options = { daysFirst: undefined }) {
       ).split(/[:.]/);
 
       if (!authorList.includes(author) && author !== 'System') {
-        authorList.push(author);
+        const newAuthor = {
+          name: author,
+          initials: computeUserInitials(author),
+        };
+        authorList.push(newAuthor);
       }
 
       if (parsed[index + 1]) {
@@ -130,7 +137,10 @@ function parseMessages(messages, options = { daysFirst: undefined }) {
         author,
         isPreviousAuthor,
         isNextAuthor,
-        message,
+        message: {
+          raw: message,
+          html: htmlify(message),
+        },
       };
     },
   );

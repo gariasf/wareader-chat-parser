@@ -70,7 +70,7 @@ describe('parser.js', () => {
 
       describe('the message', () => {
         it('should contain the correct message', () => {
-          expect(parsed.messages[0].message).toBe('Hey!');
+          expect(parsed.messages[0].message.raw).toBe('Hey!');
         });
       });
     });
@@ -107,7 +107,9 @@ describe('parser.js', () => {
 
       describe('the message', () => {
         it('should contain the correct message', () => {
-          expect(parsed.messages[0].message).toBe('You created group "Test"');
+          expect(parsed.messages[0].message.raw).toBe(
+            'You created group "Test"',
+          );
         });
       });
     });

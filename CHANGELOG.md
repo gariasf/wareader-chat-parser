@@ -1,4 +1,11 @@
 # Change Log
+## [4.4.3] - 2019-02-02
+
+## Changed
+
+- Change authors in authorList to an object adding computed user initials.
+- Change message to an object containing both the raw message and en html version of it.
+
 ## [3.4.3] - 2019-01-28
 
 ## Added

@@ -31,7 +31,7 @@ Is everything alright?
       expect.assertions(1);
 
       return shortChatPromise.then(result => {
-        expect(result.messages[4].message).toBe(
+        expect(result.messages[4].message.raw).toBe(
           'How are you?\n\nIs everything alright?\n',
         );
       });

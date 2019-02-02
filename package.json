@@ -1,7 +1,7 @@
 {
-  "name": "whatsapp-chat-parser-alt",
-  "version": "3.4.3",
-  "description": "A package to parse WhatsApp chats",
+  "name": "wareader-chat-parser",
+  "version": "4.4.3",
+  "description": "A package to parse WhatsApp chats for their use in waReader",
   "main": "src/index.js",
   "scripts": {
     "test": "jest --passWithNoTests",
@@ -17,15 +17,16 @@
     "discussion",
     "conversation",
     "log",
-    "parser"
+    "parser",
+    "wareader"
   ],
-  "homepage": "https://github.com/gariasf/whatsapp-chat-parser-alt",
+  "homepage": "https://github.com/gariasf/wareader-chat-parser",
   "repository": {
     "type": "git",
-    "url": "https://github.com/gariasf/whatsapp-chat-parser-alt"
+    "url": "https://github.com/gariasf/wareader-chat-parser.git"
   },
   "bugs": {
-    "url": "https://github.com/gariasf/whatsapp-chat-parser-alt/issues"
+    "url": "https://github.com/gariasf/wareader-chat-parser/issues"
   },
   "author": {
     "name": "Guillem Arias",
@@ -41,5 +42,8 @@
     "jest": "23.6.0",
     "prettier": "1.15.2",
     "pretty-quick": "1.8.0"
+  },
+  "dependencies": {
+    "anchorme": "^1.1.2"
   }
 }

@@ -1,0 +1,80 @@
+Arguments: 
+  c:\program files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add anchrome
+
+PATH: 
+  c:\program files (x86)\common files\intel\shared libraries\redist\intel64\compiler;c:\windows\system32;c:\windows;c:\windows\system32\wbem;c:\windows\system32\windowspowershell\v1.0\;c:\windows\system32\openssh\;c:\program files\git\cmd;c:\program files\putty\;c:\program files\nodejs\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;D:\ASDK\platform-tools;C:\Program Files\Java\jdk-11.0.1\bin;C:\cygwin64\bin;C:\Go\bin;D:\Program Files\Tor\Tor;D:\Program Files\Tor\Data\Tor;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files (x86)\Yarn\bin\;C:\Users\mrspe\AppData\Local\Microsoft\WindowsApps;C:\Users\mrspe\AppData\Local\Programs\Microsoft VS Code\bin;D:\TDM-GCCW\bin;C:\Users\mrspe\AppData\Roaming\npm;C:\Users\mrspe\go\bin;C:\Users\mrspe\AppData\Local\Programs\Fiddler;C:\Program Files (x86)\Nmap;C:\Users\mrspe\AppData\Local\Yarn\bin;C:\Users\mrspe\AppData\Local\atom\bin
+
+Yarn version: 
+  1.13.0
+
+Node version: 
+  8.12.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/anchrome: Not found
+      at Request.params.callback [as _callback] (C:\Program Files (x86)\Yarn\lib\cli.js:65364:18)
+      at Request.self.callback (C:\Program Files (x86)\Yarn\lib\cli.js:129397:22)
+      at emitTwo (events.js:126:13)
+      at Request.emit (events.js:214:7)
+      at Request.<anonymous> (C:\Program Files (x86)\Yarn\lib\cli.js:130369:10)
+      at emitOne (events.js:116:13)
+      at Request.emit (events.js:211:7)
+      at IncomingMessage.<anonymous> (C:\Program Files (x86)\Yarn\lib\cli.js:130291:12)
+      at Object.onceWrapper (events.js:313:30)
+      at emitNone (events.js:111:20)
+
+npm manifest: 
+  {
+    "name": "whatsapp-chat-parser-alt",
+    "version": "3.4.3",
+    "description": "A package to parse WhatsApp chats",
+    "main": "src/index.js",
+    "scripts": {
+      "test": "jest --passWithNoTests",
+      "test:watch": "jest --watchAll",
+      "test:coverage": "jest --coverage",
+      "lint": "eslint src/**/*.js",
+      "format": "pretty-quick",
+      "format:staged": "pretty-quick --staged"
+    },
+    "keywords": [
+      "whatsapp",
+      "chat",
+      "discussion",
+      "conversation",
+      "log",
+      "parser"
+    ],
+    "homepage": "https://github.com/gariasf/whatsapp-chat-parser-alt",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/gariasf/whatsapp-chat-parser-alt"
+    },
+    "bugs": {
+      "url": "https://github.com/gariasf/whatsapp-chat-parser-alt/issues"
+    },
+    "author": {
+      "name": "Guillem Arias",
+      "email": "hello@gariasf.com"
+    },
+    "license": "MIT",
+    "devDependencies": {
+      "eslint": "5.9.0",
+      "eslint-config-airbnb-base": "13.1.0",
+      "eslint-config-prettier": "3.3.0",
+      "eslint-plugin-import": "2.14.0",
+      "eslint-plugin-prettier": "3.0.0",
+      "jest": "23.6.0",
+      "prettier": "1.15.2",
+      "pretty-quick": "1.8.0"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
